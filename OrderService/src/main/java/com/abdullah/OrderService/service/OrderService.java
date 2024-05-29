@@ -70,7 +70,10 @@ public class OrderService {
         responseList.add(vo);
         return responseList;
     }
+     public void deleteorder(Long id) {
+        orderRepository.deleteById(id);
+
     
+     }
    
-   
-}
+     }

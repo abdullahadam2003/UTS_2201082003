@@ -47,4 +47,14 @@ public class PembayaranController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
+
+  @PutMapping(path = "{id}")
+    public void updatePembayaran(@PathVariable("id") Long id,
+                                 @RequestParam(required = false) String mode_pembayaran,
+                                 @RequestParam(required = false) Integer ref_number,
+                                 @RequestParam(required = false) String tgl_bayar,
+                                 @RequestParam(required = false) String status,
+                                 @RequestParam(required = false) Double total) {
+        pembayaranService.update(id, mode_pembayaran, ref_number, tgl_bayar, status, total);
+    }
 }
